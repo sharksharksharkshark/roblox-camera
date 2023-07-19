@@ -1,0 +1,78 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/youngstar"))();
+
+local Window1 = library:CreateWindow("第三人称");
+
+Window1:Button("第一人称",function()
+    local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+Player.CameraMaxZoomDistance = 128
+Player.CameraMinZoomDistance = 0
+end);
+
+Window1:Button("第三人称（20）",function()
+    local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+Player.CameraMaxZoomDistance = 128
+Player.CameraMinZoomDistance = 20
+end);
+
+Window1:Button("第三人称（25）",function()
+    local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+Player.CameraMaxZoomDistance = 128
+Player.CameraMinZoomDistance = 25
+end);
+
+Window1:Button("第三人称（MAX）",function()
+    local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+Player.CameraMaxZoomDistance = 128
+Player.CameraMinZoomDistance = 128
+end);
+
+Window1:Button("备用rake透视",function()
+    workspace.ChildAdded:Connect(function()
+			if workspace:FindFirstChild("Rake") then
+				for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
+					if v.Name == 'Rake' then -- checks if it has a handle and if its a touchtransmitter
+						local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
+						local TextLabel = Instance.new('TextLabel') -- makes text label
+
+						BillboardGui.Parent = v.Head -- what the billboardgui goes into
+						BillboardGui.AlwaysOnTop = true -- if its on top or not
+						BillboardGui.Size = UDim2.new(0, 25, 0, 50) -- size of it
+						BillboardGui.StudsOffset = Vector3.new(0,2,0)
+
+						TextLabel.Parent = BillboardGui -- putting textlabel into billboardgui
+						TextLabel.BackgroundColor3 = Color3.new(1,1,1) -- color
+						TextLabel.BackgroundTransparency = 1 -- transparency
+						TextLabel.Size = UDim2.new(1, 0, 1, 0) -- size
+						TextLabel.Text = "怪" -- what the label says
+						TextLabel.TextColor3 = Color3.new(1, 0, 0) -- color
+						TextLabel.TextScaled = true -- if the text is scaled or not
+					end
+				end
+			end
+		end)
+		if workspace:FindFirstChild("Rake") then
+			for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
+				if v.Name == 'Rake' then -- checks if it has a handle and if its a touchtransmitter
+					local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
+					local TextLabel = Instance.new('TextLabel') -- makes text label
+
+					BillboardGui.Parent = v.Head -- what the billboardgui goes into
+					BillboardGui.AlwaysOnTop = true -- if its on top or not
+					BillboardGui.Size = UDim2.new(0, 25, 0, 50) -- size of it
+					BillboardGui.StudsOffset = Vector3.new(0,2,0)
+
+					TextLabel.Parent = BillboardGui -- putting textlabel into billboardgui
+					TextLabel.BackgroundColor3 = Color3.new(1,1,1) -- color
+					TextLabel.BackgroundTransparency = 1 -- transparency
+					TextLabel.Size = UDim2.new(1, 0, 1, 0) -- size
+					TextLabel.Text = "怪" -- what the label says
+					TextLabel.TextColor3 = Color3.new(1, 0, 0) -- color
+					TextLabel.TextScaled = true -- if the text is scaled or not
+				end
+			end
+		end
+end);
